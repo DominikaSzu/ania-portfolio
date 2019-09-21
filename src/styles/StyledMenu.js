@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const styledMenu = styled.div`
+export const StyledMenu = styled.div`
 // menu style
 `;
