@@ -4,7 +4,7 @@ import { StyledFooter } from "../styles/StyledFooter";
 const Footer = () => {
 return (
 	<StyledFooter>
-		Footer
+		Copyright © 2019 by Anna Szukała. All rights reserved.
 	</StyledFooter>
 )}
 

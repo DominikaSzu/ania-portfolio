@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.div`
-// menu style
+border: 2px solid pink;
+height: 70vh;
+min-height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+img {
+    height: 300px;
+}
+
+.menu-item-wrapper {
+    display: flex;
+    min-height: 80px;
+    padding: 30px;
+    border: 1px solid teal;
+}
 `;
