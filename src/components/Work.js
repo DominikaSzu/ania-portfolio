@@ -1,11 +1,11 @@
 import React from "react";
 import { StyledWork } from "../styles/StyledWork";
 
-const Work = () => {
+const Work = (props) => {
     return (
         <StyledWork>
             <a href="#">
-                <img src="https://www.datocms-assets.com/16500/1572630216-annaszukala01.jpg"/>
+                <img src={props.work} />
             </a>
         </StyledWork>
     )
