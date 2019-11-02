@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `69ca832f07ccf297b4efad2084862e`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-148703213-1',

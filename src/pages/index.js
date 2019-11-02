@@ -1,25 +1,52 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Work from "../components/Work";
 
-const works = [
-    'https://www.datocms-assets.com/16500/1572630212-annaszukala02.jpg',
-    'https://www.datocms-assets.com/16500/1572630209-annaszukala03.jpg',
-    'https://www.datocms-assets.com/16500/1572630206-scena.jpg',
-    'https://www.datocms-assets.com/16500/1572630216-annaszukala01.jpg',
-    'https://www.datocms-assets.com/16500/1572630212-annaszukala02.jpg',
-    'https://www.datocms-assets.com/16500/1572630206-scena.jpg',
-    'https://www.datocms-assets.com/16500/1572630209-annaszukala03.jpg',
-    'https://www.datocms-assets.com/16500/1572630216-annaszukala01.jpg',
-]
+const IndexPage = () => {
+const data = useStaticQuery(graphql`
+query indexPage {
+    allDatoCmsSketchbook {
+      edges {
+        node {
+          title,
+          description,
+          image {
+            url,
+          },
+          url
+        }
+      }
+    }
+  }
+`)
 
-const IndexPage = () => (
-<Layout>
-    <div className="work-wrapper">
-        {works.map((work, i) => <Work work={work} key={i} />)}
-    </div>
-</Layout>
-)
+const datafromDato = data && data.allDatoCmsSketchbook.edges.map(el => el.node);
+const data1 = datafromDato && datafromDato.slice(0,3);
+const data2 = datafromDato && datafromDato.slice(3,6);
+const data3 = datafromDato && datafromDato.slice(6);
+console.log(data1)
+return (
+    <Layout>
+        <div className="work-wrapper">
+            <div className="column">
+                {data1.map((work, i) => {
+                return <Work work={work.image[0].url} key={i} />
+                })}
+            </div>
+            <div className="column">
+                {data2.map((work, i) => {
+                return <Work work={work.image[0].url} key={i} />
+                })}
+            </div>
+            <div className="column">
+                {data3.map((work, i) => {
+                return <Work work={work.image[0].url} key={i} />
+                })}
+            </div>
+        </div>
+    </Layout>
+    )
+}
 
 export default IndexPage;
