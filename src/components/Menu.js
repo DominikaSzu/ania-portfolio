@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledMenu } from "../styles/StyledMenu";
-import MenuItem from "./MenuItem";
+import { StyledMenu } from "../styles/StyledMenu.js";
+import MenuItem from "./MenuItem.js";
 
 const Menu = () => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Work from "../components/Work";
+import Layout from "../components/Layout.js";
+import Work from "../components/Work.js";
 
 const IndexPage = () => {
 const data = useStaticQuery(graphql`

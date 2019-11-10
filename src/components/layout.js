@@ -1,7 +1,7 @@
-import React from "React";
-import { StyledLayout } from "../styles/StyledLayout";
-import Menu from "./Menu";
-import Footer from "./Footer";
+import React from "react";
+import { StyledLayout } from "../styles/StyledLayout.js";
+import Menu from "./Menu.js";
+import Footer from "./Footer.js";
 
 const Layout = ({ children }) => {
 	console.log('fun begun');
