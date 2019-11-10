@@ -3,6 +3,7 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
     const artListTemplate = path.resolve(`src/templates/artListTemplate.js`)
+    const artWorkTemplate = path.resolve(`src/templates/artWorkTemplate.js`)
     const work = await graphql(`
     {
         arts: allDatoCmsArt {
@@ -56,6 +57,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `)
 
+    // Create pages with list of art works
+
     const arts = work.data.arts.edges
     createPage({
         path: `/art/`,
@@ -72,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const illustrations = work.data.illustrations.edges
     createPage({
-        path: `/illustration/`,
+        path: `/illustrations/`,
         component: artListTemplate,
         context: illustrations,
     })
@@ -83,4 +86,14 @@ exports.createPages = async ({ graphql, actions }) => {
         component: artListTemplate,
         context: projects,
     })
+
+    // Create single art work page
+
+    illustrations.forEach(illustration => {
+        createPage({
+          path: illustration.node.url,
+          component: artWorkTemplate,
+          context: illustration.node,
+      })
+    });
 }

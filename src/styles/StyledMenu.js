@@ -9,7 +9,9 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 img {
-    height: 300px;
+    max-height: 300px;
+    max-width: 100%;
+    height: auto;
 }
 
 .menu-item-wrapper {

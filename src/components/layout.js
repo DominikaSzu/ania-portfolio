@@ -9,7 +9,7 @@ return (
 	<StyledLayout>
 		<Menu />
 		<div className="content-wrapper">
-			<main>{children}</main>
+			{children}
 		</div>
 		<Footer />
 	</StyledLayout>

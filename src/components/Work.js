@@ -4,8 +4,8 @@ import { StyledWork } from "../styles/StyledWork";
 const Work = (props) => {
     return (
         <StyledWork>
-            <a href="#">
-                <img src={props.work} />
+            <a href={props.work.url || "#"}>
+                <img src={props.work.image[0].url} />
             </a>
         </StyledWork>
     )
