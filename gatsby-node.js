@@ -82,12 +82,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const projects = work.data.projects.edges
     createPage({
-        path: `/project/`,
+        path: `/projects/`,
         component: artListTemplate,
         context: projects,
     })
 
     // Create single art work page
+
+    arts.forEach(art => {
+      createPage({
+        path: art.node.url,
+        component: artWorkTemplate,
+        context: art.node,
+      })
+    })
+
+    sketchbooks.forEach(sketchbook => {
+      createPage({
+        path: sketchbook.node.url,
+        component: artWorkTemplate,
+        context: sketchbook.node,
+      })
+    })
 
     illustrations.forEach(illustration => {
         createPage({
@@ -95,5 +111,13 @@ exports.createPages = async ({ graphql, actions }) => {
           component: artWorkTemplate,
           context: illustration.node,
       })
-    });
+    })
+
+    projects.forEach(project => {
+      createPage({
+        path: project.node.url,
+        component: artWorkTemplate,
+        context: project.node,
+      })
+    })
 }

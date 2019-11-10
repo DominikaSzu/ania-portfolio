@@ -37,10 +37,12 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    padding-left: 20px;
-    padding-top: 60px;
+    padding: 10px 20px;
+    margin-top: 70px;
     display: none;
     text-align: left;
+    background-color: #fff;
+    border: 1px solid brown;
 
     li {
         margin: 10px auto;
