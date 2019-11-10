@@ -4,11 +4,12 @@ import { StyledMenuItem } from "../styles/StyledMenuItem";
 const MenuItem = ({ menuItem }) => {
     
     const { title, url, dropdown } = menuItem;
+    const dropdownDisplay = dropdown && (dropdown.length !== 0);
 
     return (
         <StyledMenuItem>
             <a href={url}>{title}</a>
-            {dropdown && (
+            {dropdownDisplay && (
                 <ul className="dropdown-menu">
                     {dropdown.map((dropDownEl, i) => <li key={i}><a href={dropDownEl.url}>{dropDownEl.title}</a></li>)}  
                 </ul>
