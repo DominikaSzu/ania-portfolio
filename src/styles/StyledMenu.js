@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.div`
-border: 2px solid pink;
+// border: 2px solid pink;
 height: 90vh;
 min-height: 200px;
 display: flex;
@@ -19,6 +19,6 @@ img {
     margin-top: 100px;
     min-height: 80px;
     padding: 30px;
-    border: 1px solid teal;
+    // border: 1px solid teal;
 }
 `;
