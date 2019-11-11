@@ -8,7 +8,11 @@ const MenuItem = ({ menuItem }) => {
 
     return (
         <StyledMenuItem>
-            <a href={url}>{title}</a>
+            {url? (
+                <a href={url}>{title}</a>
+            ) : (
+                <span>{title}</span>
+            ) }
             {dropdownDisplay && (
                 <ul className="dropdown-menu">
                     {dropdown.map((dropDownEl, i) => <li key={i}><a href={dropDownEl.url}>{dropDownEl.title}</a></li>)}  

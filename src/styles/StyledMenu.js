@@ -20,5 +20,9 @@ img {
     min-height: 80px;
     padding: 30px;
     // border: 1px solid teal;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
 }
 `;

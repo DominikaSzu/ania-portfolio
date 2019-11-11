@@ -32,10 +32,11 @@ a {
     top: 0;
     left: 0;
     padding: 10px 20px;
-    margin-top: 70px;
+    margin-top: 30px;
     display: none;
     text-align: left;
     background-color: #fff;
+    z-index: 5;
     // border: 1px solid brown;
 
     li {
