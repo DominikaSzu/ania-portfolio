@@ -6,25 +6,63 @@ import Work from "../components/Work.js";
 const IndexPage = () => {
 const data = useStaticQuery(graphql`
 query indexPage {
-    allDatoCmsSketchbook {
+    arts: allDatoCmsArt {
       edges {
         node {
           title,
           description,
+          url,
           image {
             url,
           },
-          url
+        }
+      }
+    },
+    sketchbooks: allDatoCmsSketchbook {
+      edges {
+        node {
+          title,
+          description,
+          url,
+          image {
+            url,
+          },
+        }
+      }
+    },
+    illustrations: allDatoCmsIllustration {
+      edges {
+        node {
+          title,
+          description,
+          url,
+          image {
+            url,
+          },
+        }
+      }
+    },
+    projects: allDatoCmsProject {
+      edges {
+        node {
+          title,
+          description,
+          url,
+          image {
+            url,
+          },
         }
       }
     }
   }
 `)
 
-const datafromDato = data && data.allDatoCmsSketchbook.edges.map(el => el.node);
-const data1 = datafromDato && datafromDato.slice(0,3);
-const data2 = datafromDato && datafromDato.slice(3,6);
-const data3 = datafromDato && datafromDato.slice(6);
+const datafromDato1 = data && data.arts.edges.map(el => el.node);
+const datafromDato2 = data && data.sketchbooks.edges.map(el => el.node);
+const datafromDato3 = data && data.illustrations.edges.map(el => el.node);
+const data1 = datafromDato1 && datafromDato1.slice(0,7);
+const data2 = datafromDato2 && datafromDato2.slice(0,7);
+const data3 = datafromDato3 && datafromDato3.slice(0,7);
 
 return (
     <Layout>

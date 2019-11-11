@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledMenuItem = styled.div`
-// border: 1px solid yellow;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -37,7 +36,6 @@ a {
     text-align: left;
     background-color: #fff;
     z-index: 5;
-    // border: 1px solid brown;
 
     li {
         margin: 10px auto;

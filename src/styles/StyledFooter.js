@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-// border: 1px solid red;
 min-height: 50px;
 width: 100%;
 max-width: 1400px;

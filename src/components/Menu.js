@@ -26,7 +26,9 @@ const Menu = () => {
 
 return (
 	<StyledMenu>
-		<img src="https://www.datocms-assets.com/16500/1572641945-logo.png" />
+		<a href="/">
+			<img src="https://www.datocms-assets.com/16500/1572641945-logo.png" />
+		</a>
 		<div className="menu-item-wrapper">
 			{menuItems.map((menuItem, i) => <MenuItem menuItem={menuItem.node} key={i} />)}
 		</div>
